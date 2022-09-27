@@ -1,4 +1,4 @@
-package tech.reliab.java.VanillaFroggy;
+package tech.reliab.java.froloviv;
 
 /**
  * Hello world!
