@@ -17,7 +17,6 @@ public class WordCounter {
     public void readListFromFile() {
         String fileName = "src/main/java/tech/reliab/java/froloviv/test.txt";
         try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName))) {
-            String str;
             list = br.lines().collect(Collectors.toList());
         } catch (IOException e) {
             e.printStackTrace();
