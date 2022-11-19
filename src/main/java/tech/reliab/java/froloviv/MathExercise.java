@@ -2,7 +2,7 @@ package tech.reliab.java.froloviv;
 
 import java.lang.Math;
 // Вариант 13
-public class Lab1 {
+public class MathExercise {
     public double calculateFirstMathematicalExpression(double x, double j) { return (2 * Math.PI * j + Math.tan(Math.toRadians(Math.pow(x, 3)))) / (2 * j * Math.abs(Math.cos(Math.toRadians(x)))); }
     public double calculateSecondMathematicalExpression(double x, double b, double c) { return (Math.pow(x, 3) + Math.pow(x, 2) * Math.pow(Math.sin(Math.toRadians(b * x)), 2) + c) / (1 + ((Math.pow(x, 2) + c) / (1 - x))); }
 //  Номера задач второго задания: 1, 5, 13, 18
