@@ -1,10 +1,15 @@
 package tech.reliab.java.froloviv;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
+import tech.reliab.java.froloviv.entity.Phone;
+import tech.reliab.java.froloviv.entity.PhoneType;
+import tech.reliab.java.froloviv.service.OrderProcessingImpl;
+
 public class App {
+    static OrderProcessingImpl processing = new OrderProcessingImpl();
+
     public static void main(String[] args) {
 //        Test of MathExercise
 
@@ -28,60 +33,67 @@ public class App {
 
 //        Test of MyDouble
 
-        MyDouble myDouble = new MyDouble(155.15);
-        MyDouble strDouble = new MyDouble("13.68");
-        System.out.println(strDouble.getValue());
-        System.out.println(myDouble.equals(strDouble));
-        MyDouble secDouble = new MyDouble((155.15));
-        System.out.println(myDouble.equals(secDouble));
-        myDouble.add(strDouble);
-        System.out.println(myDouble.getValue());
-        myDouble.reduce(strDouble);
-        System.out.println(myDouble.getValue());
-        myDouble.multiple(strDouble);
-        System.out.println(myDouble.getValue());
-        myDouble.divide(strDouble);
-        System.out.println(myDouble.getValue());
-        strDouble.pow(2);
-        System.out.println(strDouble.getValue());
-        System.out.println(myDouble.toHexString());
-        System.out.println(myDouble.toOctalString() + '\n');
+//        MyDouble myDouble = new MyDouble(155.15);
+//        MyDouble strDouble = new MyDouble("13.68");
+//        System.out.println(strDouble.getValue());
+//        System.out.println(myDouble.equals(strDouble));
+//        MyDouble secDouble = new MyDouble((155.15));
+//        System.out.println(myDouble.equals(secDouble));
+//        myDouble.add(strDouble);
+//        System.out.println(myDouble.getValue());
+//        myDouble.reduce(strDouble);
+//        System.out.println(myDouble.getValue());
+//        myDouble.multiple(strDouble);
+//        System.out.println(myDouble.getValue());
+//        myDouble.divide(strDouble);
+//        System.out.println(myDouble.getValue());
+//        strDouble.pow(2);
+//        System.out.println(strDouble.getValue());
+//        System.out.println(myDouble.toHexString());
+//        System.out.println(myDouble.toOctalString() + '\n');
+//
+//        ListContainer<ArrayList<Integer>> firstListContainer = new ListContainer<>();
+//        ListContainer<ArrayList<Integer>> secondListContainer = new ListContainer<>();
+//
+//        ArrayList<Integer> firstList = new ArrayList<>();
+//        ArrayList<Integer> secondList = new ArrayList<>();
+//        ArrayList<Integer> thirdList = new ArrayList<>();
+//
+//        for (int i = 0; i < 5; i++) {
+//            firstList.add(i);
+//            secondList.add(i + 1);
+//            thirdList.add(i * 2 + 1);
+//        }
+//
+//        ListContainer<List<Integer>> thirdListContainer = new ListContainer<>(firstList, secondList);
+//
+//        firstListContainer.add(firstList);
+//        secondListContainer.add(firstList);
+//
+//        thirdListContainer.add(firstList);
+//        thirdListContainer.add(secondList);
+//        thirdListContainer.add(thirdList);
+//
+//        System.out.println(firstListContainer);
+//        System.out.println(secondListContainer);
+//        System.out.println(thirdListContainer);
+//
+//        System.out.println("Сраравнения двух контейнеров:\n" + firstListContainer.compareTo(secondListContainer));
+//        System.out.println("Второй контейнер:\n" + secondListContainer);
+//        secondListContainer.remove(0);
+//        System.out.println("Удаление элементов в контейнере:\n" + secondListContainer);
+//        System.out.println("Поиск элементов по индексу = 1:\n" + thirdListContainer.get(1));
+//        System.out.println("Поиск элементов по значению = '[1, 3, 5, 7, 9]':\n" + thirdListContainer.get(thirdList));
+//        System.out.println("Получение подсписка по индексам с 0 по 2:\n" + thirdListContainer.subList(0, 2));
+//        thirdListContainer.addAll(firstListContainer);
+//        System.out.println("Добавление коллекции элементов:\n" + thirdListContainer);
 
-        ListContainer<ArrayList<Integer>> firstListContainer = new ListContainer<>();
-        ListContainer<ArrayList<Integer>> secondListContainer = new ListContainer<>();
+//      Classes
 
-        ArrayList<Integer> firstList = new ArrayList<>();
-        ArrayList<Integer> secondList = new ArrayList<>();
-        ArrayList<Integer> thirdList = new ArrayList<>();
+        Phone phone = new Phone(PhoneType.SONY, 5.2, 3000, "Пластик", "2Гб");
 
-        for (int i = 0; i < 5; i++) {
-            firstList.add(i);
-            secondList.add(i + 1);
-            thirdList.add(i * 2 + 1);
-        }
-
-        ListContainer<List<Integer>> thirdListContainer = new ListContainer<>(firstList, secondList);
-
-        firstListContainer.add(firstList);
-        secondListContainer.add(firstList);
-
-        thirdListContainer.add(firstList);
-        thirdListContainer.add(secondList);
-        thirdListContainer.add(thirdList);
-
-        System.out.println(firstListContainer);
-        System.out.println(secondListContainer);
-        System.out.println(thirdListContainer);
-
-        System.out.println("Сраравнения двух контейнеров:\n" + firstListContainer.compareTo(secondListContainer));
-        System.out.println("Второй контейнер:\n" + secondListContainer);
-        secondListContainer.remove(0);
-        System.out.println("Удаление элементов в контейнере:\n" + secondListContainer);
-        System.out.println("Поиск элементов по индексу = 1:\n" + thirdListContainer.get(1));
-        System.out.println("Поиск элементов по значению = '[1, 3, 5, 7, 9]':\n" + thirdListContainer.get(thirdList));
-        System.out.println("Получение подсписка по индексам с 0 по 2:\n" + thirdListContainer.subList(0, 2));
-        thirdListContainer.addAll(secondListContainer);
-        System.out.println("Добавление коллекции элементов:\n" + thirdListContainer);
-
+        System.out.println(processing.createOrder(phone));
+        System.out.println(processing.changeOrder(phone));
+        System.out.println(processing.returnOrder(phone));
     }
 }
