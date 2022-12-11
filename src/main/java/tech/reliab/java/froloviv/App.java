@@ -90,10 +90,19 @@ public class App {
 
 //      Classes
 
-        Phone phone = new Phone(PhoneType.SONY, 5.2, 3000, "Пластик", "2Гб");
+//        Phone phone = new Phone(PhoneType.SONY, 5.2, 3000, "Пластик", "2Гб");
+//
+//        System.out.println(processing.createOrder(phone));
+//        System.out.println(processing.changeOrder(phone));
+//        System.out.println(processing.returnOrder(phone));
 
-        System.out.println(processing.createOrder(phone));
-        System.out.println(processing.changeOrder(phone));
-        System.out.println(processing.returnOrder(phone));
+//        Lambda
+
+        LambdaTask lambdaTask = new LambdaTask();
+        lambdaTask.executeFirstTask(39);
+        lambdaTask.executeFirstTask(23);
+        lambdaTask.executeSecondTask("Философия", "Жизнь");
+        lambdaTask.executeThirdTask(2.13, 3.45, 5.98);
+        lambdaTask.executeForthTask(1.23, 2.34, 3.45);
     }
 }
